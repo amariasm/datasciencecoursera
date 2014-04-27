@@ -29,11 +29,11 @@ names(Y) <- "activity"
 
 # 4. Combining all the variables into one dataset
 dataset <- cbind(subj, Y, X)
-write.csv(dataset, "dataset.csv")
+write.table(dataset, "dataset.txt")
 
 # 5. Creating a 2nd tidy data set with the average of each variable for each activity and each subject.
 library(reshape)
 ids = c("SubjID", "ActID", "ActName")
 melted <- melt(dataset, id.vars = c("subject", "activity"))
 avg_dataset <- cast(subject + variable ~ activity, data = melted, fun=mean)
-write.csv(avg_dataset, "avg_data.csv")
+write.table(avg_dataset, "avg_data.txt")
