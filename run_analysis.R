@@ -33,7 +33,6 @@ write.table(dataset, "dataset.txt")
 
 # 5. Creating a 2nd tidy data set with the average of each variable for each activity and each subject.
 library(reshape)
-ids = c("SubjID", "ActID", "ActName")
 melted <- melt(dataset, id.vars = c("subject", "activity"))
 avg_dataset <- cast(subject + variable ~ activity, data = melted, fun=mean)
 write.table(avg_dataset, "avg_data.txt")
