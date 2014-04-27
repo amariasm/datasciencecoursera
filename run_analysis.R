@@ -1,4 +1,6 @@
 # R script for Getting and Cleaning Data Project
+# It should work provided that you unzipped UCI HAR Dataset into the same directory
+# The link for UC HAR Dataset: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 # 1. Preparing column for "Subject" variable
 subj_train <- read.table("UCI HAR Dataset/train/subject_train.txt", header=F)
